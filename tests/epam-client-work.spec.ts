@@ -7,3 +7,8 @@ test.describe('EPAM client work navigation', () => {
     await page.setViewportSize({ width: 1920, height: 1080 });
 
     await page.getByRole('link', { name: 'Services' }).nth(1).click();
+    await page.getByRole('link', { name: 'Explore Our Client Work' }).click();
+
+    await expect(page.getByRole('heading', { name: 'Client Work' })).toBeVisible();
+  });
+});
